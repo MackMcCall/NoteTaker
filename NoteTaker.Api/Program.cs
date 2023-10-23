@@ -1,6 +1,20 @@
+using System.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddScoped<IDbConnection>((s) =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("NoteTaker")
+});
+
+
+//builder.Services.AddScoped<IDbConnection>((s) =>
+//{
+//    var connectionString = builder.Configuration.GetConnectionString("coffeeschedulerdb");
+//    return new MySqlConnectionFactory(connectionString).CreateConnection();
+//});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
