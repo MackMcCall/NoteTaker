@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IDbConnection>((s) =>
 {
-    var connectionString = builder.Configuration.GetConnectionString("NoteTaker")
+    var connectionString = builder.Configuration.GetConnectionString("NoteTaker");
 });
 
 

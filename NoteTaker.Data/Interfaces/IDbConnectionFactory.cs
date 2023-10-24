@@ -13,11 +13,11 @@ namespace NoteTaker.Domain
         IDbConnection CreateConnection();
     }
 
-    public class SqlServerConnectionFactory : IDbConnectionFactory
+    public class SqlConnectionFactory : IDbConnectionFactory
     {
         private readonly string _connectionString;
         
-        public SqlServerConnectionFactory(string connectionString)
+        public SqlConnectionFactory(string connectionString)
         {
             _connectionString = connectionString;
         }
